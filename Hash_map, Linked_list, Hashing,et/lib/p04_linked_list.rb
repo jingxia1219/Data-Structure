@@ -28,12 +28,13 @@ class LinkedList
   end
 
   def [](i)
-    current = @head
-    until i == 0 
+    current = @head.next
+    until i == 0 || current.key.nil? 
       current = current.next 
       i -= 1
     end 
-    current 
+    current.key ? current : nil
+     
   end
 
   def first
