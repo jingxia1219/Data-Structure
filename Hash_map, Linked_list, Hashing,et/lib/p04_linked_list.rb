@@ -52,6 +52,7 @@ class LinkedList
     false 
   end
 
+  # O(n)
   def get(key)
       return nil if empty? 
       current = first 
@@ -62,10 +63,12 @@ class LinkedList
       nil
   end
 
+  # O(n)
   def include?(key)
     get(key) ? true : false 
   end
 
+  # O(1)
   def append(key, val)
     new_node = Node.new(key,val)
     if empty? 
@@ -81,6 +84,7 @@ class LinkedList
     end 
   end
 
+  # O(n)
   def update(key, val)
     return nil unless include?(key)
     current = first 
@@ -94,6 +98,7 @@ class LinkedList
     end 
   end
 
+  # O(n)
   def remove(key)
   return nil unless include?(key)
       current = first 
@@ -108,6 +113,7 @@ class LinkedList
   end
 
   def each
+    return nil if empty? 
     current = first 
     until current.key.nil?
       yield current 
